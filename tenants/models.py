@@ -9,5 +9,5 @@ class Tenant(models.Model):
     phone_number = models.CharField(max_length=100)
     flat = models.ForeignKey(Flat, on_delete=models.CASCADE, related_name='tenants')
 
-
-
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
