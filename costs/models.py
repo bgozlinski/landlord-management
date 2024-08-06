@@ -15,4 +15,8 @@ class Cost(models.Model):
     invoice_number = models.CharField(max_length=50)
     invoice_date = models.DateField()
     cost_date_to_pay = models.DateField()
+    cost_is_paid = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.flat} {self.amount} {self.invoice_number} {self.invoice_date} {self.cost_date_to_pay} {self.cost_is_paid}'
 
