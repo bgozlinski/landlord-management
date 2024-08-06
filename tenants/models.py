@@ -16,7 +16,6 @@ class TenantProfileManager(BaseUserManager):
             last_name=last_name,
             phone_number=phone_number,
             flat=flat,
-            username=None,
             **extra_fields
         )
 
@@ -25,12 +24,13 @@ class TenantProfileManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, email, first_name, last_name, password):
+    def create_superuser(self, email, first_name, last_name, phone_number, password):
         user = self.create_user(
             email,
             password=password,
             first_name=first_name,
             last_name=last_name,
+            phone_number=phone_number
         )
 
         user.is_superuser = True
