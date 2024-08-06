@@ -9,3 +9,6 @@ class Rent(models.Model):
     amount_total = models.DecimalField(max_digits=10, decimal_places=2)
     due_date = models.DateField()
     is_paid = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.flat} {self.tenant}'

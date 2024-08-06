@@ -8,3 +8,6 @@ class Flat(models.Model):
     flat_number = models.CharField(max_length=10)
     flat_floor = models.IntegerField()
     flat_size_sqm = models.FloatField()
+
+    def __str__(self):
+        return f'{self.city_name} {self.street_name} {self.street_number}/{self.flat_number} '
